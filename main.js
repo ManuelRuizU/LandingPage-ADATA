@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll(
-    '.pain-card, .phase, .promise-item, .sv-step, .audience-card, .founder-card'
+    '.pain-card, .phase, .promise-item, .sv-step, .audience-card, .founder-card, .pce-card'
   ).forEach(el => observer.observe(el));
 
 });

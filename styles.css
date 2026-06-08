@@ -606,6 +606,98 @@ h2.section-title {
   text-decoration: underline;
 }
 
+
+/* ── PARA CADA UNO ── */
+.para-cada-uno { background: var(--night); }
+.para-cada-uno .tag { color: var(--leaf); border-color: var(--leaf); }
+.para-cada-uno h2.section-title { color: #fff; }
+.para-cada-uno .section-body { color: rgba(255,255,255,0.5); }
+
+.pce-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (max-width: 800px) {
+  .pce-grid { grid-template-columns: 1fr; }
+}
+
+.pce-card {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.pce-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.pce-profesor::before  { background: linear-gradient(90deg, var(--forest), var(--leaf)); }
+.pce-alumno::before    { background: linear-gradient(90deg, #2d5fa6, #4a7fd4); }
+.pce-apoderado::before { background: linear-gradient(90deg, #7b2d8b, #c45ab3); }
+
+.pce-card:hover { background: rgba(255,255,255,0.04); }
+
+.pce-icon {
+  font-size: 36px;
+  margin-bottom: 4px;
+}
+
+.pce-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 4px;
+}
+
+.pce-card h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.pce-card p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+}
+
+.pce-highlight {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  border-left: 3px solid rgba(82,183,136,0.4);
+}
+
+.pce-highlight span {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
 /* ── FOOTER ── */
 footer {
   background: var(--night); color: #fff;
@@ -669,7 +761,8 @@ footer {
 .promise-item,
 .sv-step,
 .audience-card,
-.founder-card {
+.founder-card,
+.pce-card {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -680,7 +773,8 @@ footer {
 .promise-item.visible,
 .sv-step.visible,
 .audience-card.visible,
-.founder-card.visible {
+.founder-card.visible,
+.pce-card.visible {
   opacity: 1;
   transform: translateY(0);
 }
